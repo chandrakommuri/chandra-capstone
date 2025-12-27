@@ -1,3 +1,4 @@
+import logging
 import pickle
 import pandas as pd
 import re
@@ -20,18 +21,24 @@ def load_models():
 
     if _sentiment_model is None:
         with open('pickles/sentiment_model.pkl', 'rb') as f:
+            logging.log(logging.INFO, 'Loading sentiment model')
+            _sentiment_model = pickle.load(f)
             _sentiment_model = pickle.load(f)
 
         with open('pickles/tfidf_vectorizer.pkl', 'rb') as f:
+            logging.log(logging.INFO, 'Loading tfidf vectorizer')
             _tfidf_vectorizer = pickle.load(f)
 
         with open('pickles/train_user_item_matrix_filled.pkl', 'rb') as f:
+            logging.log(logging.INFO, 'Loading train user item matrix')
             _train_matrix = pickle.load(f)
 
         with open('pickles/item_similarity_df.pkl', 'rb') as f:
+            logging.log(logging.INFO, 'Loading item similarity matrix')
             _item_similarity = pickle.load(f)
 
         with open('pickles/product_id_name_map.pkl', 'rb') as f:
+            logging.log(logging.INFO, 'Loading product id name map')
             _product_map = pickle.load(f)
 
 # -----------------------

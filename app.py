@@ -1,3 +1,5 @@
+import logging
+
 from flask import Flask, render_template, request
 import pandas as pd
 from model import recommend_item_based, sentiment_based_top5
@@ -33,4 +35,5 @@ def index():
     )
 
 if __name__ == '__main__':
+    logging.log(logging.INFO, 'Starting app')
     app.run()
