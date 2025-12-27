@@ -2,7 +2,7 @@ import pickle
 import pandas as pd
 import re
 
-from nltk.corpus import stopwords
+# from nltk.corpus import stopwords
 # from nltk import WordNetLemmatizer
 
 # -----------------------
@@ -27,12 +27,12 @@ with open('pickles/product_id_name_map.pkl', 'rb') as f:
 # Text Cleaning Function
 # -----------------------
 def clean_review_text(text):
-    stop_words = set(stopwords.words('english'))
+    # stop_words = set(stopwords.words('english'))
     # lemmatizer = WordNetLemmatizer()
     text = text.lower()
     text = re.sub(r'[^a-zA-Z]', ' ', text)
     words = text.split()
-    words = [word for word in words if word not in stop_words]
+    # words = [word for word in words if word not in stop_words]
     # words = [lemmatizer.lemmatize(word) for word in words]
     return " ".join(words)
 
