@@ -56,6 +56,7 @@ def index():
         error=error
     )
 
-if __name__ == '__main__':
-    logging.log(logging.INFO, 'Starting app')
-    app.run()
+# Uncomment below lines for local testing
+# if __name__ == '__main__':
+#     logging.log(logging.INFO, 'Starting app')
+#     app.run()
