@@ -20,7 +20,7 @@ logging.info("Chandra's capstone app initialized")
 # Load dataset
 # --------------------------------------------------
 logging.info("Loading dataset: sample30.csv")
-df = pd.read_csv("sample30.csv")
+df = pd.read_csv("data/sample30.csv")
 df["reviews_username"] = df["reviews_username"].astype(str).str.strip()
 
 usernames = sorted(df["reviews_username"].unique().tolist())
