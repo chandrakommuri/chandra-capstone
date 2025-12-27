@@ -32,7 +32,6 @@ def load_models():
         with open('pickles/sentiment_model.pkl', 'rb') as f:
             logging.log(logging.INFO, 'Loading sentiment model')
             _sentiment_model = pickle.load(f)
-            _sentiment_model = pickle.load(f)
 
         with open('pickles/tfidf_vectorizer.pkl', 'rb') as f:
             logging.log(logging.INFO, 'Loading tfidf vectorizer')
