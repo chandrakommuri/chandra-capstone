@@ -6,6 +6,13 @@ import re
 # from nltk.corpus import stopwords
 # from nltk import WordNetLemmatizer
 
+logging.basicConfig(
+    level=logging.INFO,
+    format="%(asctime)s [%(levelname)s] %(message)s"
+)
+
+logging.info("model.py loaded")
+
 # -----------------------
 # Load Pickle Files
 # -----------------------
@@ -20,6 +27,8 @@ def load_models():
     global _train_matrix, _item_similarity, _product_map
 
     if _sentiment_model is None:
+        logging.info("Loading pickle files...")
+
         with open('pickles/sentiment_model.pkl', 'rb') as f:
             logging.log(logging.INFO, 'Loading sentiment model')
             _sentiment_model = pickle.load(f)
@@ -40,6 +49,8 @@ def load_models():
         with open('pickles/product_id_name_map.pkl', 'rb') as f:
             logging.log(logging.INFO, 'Loading product id name map')
             _product_map = pickle.load(f)
+
+        logging.info("All models loaded successfully")
 
 # -----------------------
 # Text Cleaning Function
