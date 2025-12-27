@@ -72,5 +72,7 @@ def recommend_api():
 
 # Uncomment below lines for local testing
 if __name__ == '__main__':
-    logging.log(logging.INFO, 'Starting app')
-    app.run()
+    import sys
+    if len(sys.argv) == 2 and sys.argv[1] == "local":
+        logging.log(logging.INFO, 'Starting app locally')
+        app.run()
